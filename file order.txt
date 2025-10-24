@@ -1,0 +1,69 @@
+virtual-pet-game/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── images/
+│   ├── pets/
+│   │   ├── dog/
+│   │   │   ├── baby.png
+│   │   │   ├── child.png
+│   │   │   ├── teen.png
+│   │   │   ├── adult.png
+│   │   │   └── elderly.png
+│   │   ├── cat/
+│   │   │   ├── baby.png
+│   │   │   ├── child.png
+│   │   │   ├── teen.png
+│   │   │   ├── adult.png
+│   │   │   └── elderly.png
+│   │   └── rabbit/
+│   │       ├── baby.png
+│   │       ├── child.png
+│   │       ├── teen.png
+│   │       ├── adult.png
+│   │       └── elderly.png
+│   │
+│   ├── skills/
+│   │   ├── speak.png
+│   │   ├── roll.png
+│   │   ├── sit.png
+│   │   ├── stay.png
+│   │   ├── dance.png
+│   │   ├── fetch.png
+│   │   ├── spin.png
+│   │   └── play_dead.png
+│   │
+│   ├── items/
+│   │   ├── kibble.png
+│   │   ├── treat.png
+│   │   ├── veggie.png
+│   │   ├── water.png
+│   │   ├── milk.png
+│   │   └── juice.png
+│   │
+│   ├── actions/
+│   │   ├── fetch.png
+│   │   ├── walk.png
+│   │   ├── toy.png
+│   │   ├── cuddle.png
+│   │   ├── hug.png
+│   │   ├── talk.png
+│   │   ├── clean.png
+│   │   ├── train.png
+│   │   └── sleep.png
+│   │
+│   ├── ui/
+│   │   ├── poop.png
+│   │   ├── heart.png
+│   │   └── skull.png
+│   │
+│   └── backgrounds/
+│       ├── background1.jpg
+│       ├── background2.jpg
+│       ├── background3.jpg
+│       ├── background4.jpg
+│       └── background5.jpg
+│
+└── README.md

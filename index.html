@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Virtual Pet Game</h1>
+            <div class="game-controls">
+                <div class="pet-setup">
+                    <select id="pet-type">
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="rabbit">Rabbit</option>
+                    </select>
+                    <input type="text" id="pet-name" placeholder="Pet Name" value="Fluffy">
+                    <button id="start-button">Start Game</button>
+                    <button id="reset-button">Reset Pet</button>
+                </div>
+            </div>
+            
+            <div class="background-selector">
+                <label for="background-select">Background:</label>
+                <select id="background-select">
+                    <option value="none">No Background</option>
+                    <option value="background1">Background 1</option>
+                    <option value="background2">Background 2</option>
+                    <option value="background3">Background 3</option>
+                    <option value="background4">Background 4</option>
+                    <option value="background5">Background 5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="status-panel">
+                <div id="status">Welcome! Click Start Game to begin!</div>
+            </div>
+
+            <div class="pet-display-container">
+                <div class="pet-display-background" id="pet-background">
+                    <div class="pet-display">
+                        <div class="pet-stage" id="pet-stage">Baby</div>
+                        <div class="pet-visual">
+                            <div id="pet-image" class="pet-image">
+                                <img id="pet-img" src="" alt="Your Pet">
+                            </div>
+                            <div class="pet-name" id="display-name">Fluffy</div>
+                        </div>
+                        <div class="poop-alert" id="poop-alert">
+                            <img src="images/ui/poop.png" alt="Poop" class="alert-icon">
+                            Need Cleanup!
+                        </div>
+                        <div id="death-overlay" class="death-overlay" style="display: none;">
+                            <img src="images/ui/skull.png" alt="RIP">
+                            <div id="death-message"></div>
+                            <div style="font-size: 14px; margin-top: 5px;">Press Reset Pet to start over</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat">
+                    <label>Hunger:</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="hunger-bar"></div>
+                    </div>
+                    <span class="stat-value" id="hunger-text">100%</span>
+                </div>
+                <div class="stat">
+                    <label>Thirst:</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="thirst-bar"></div>
+                    </div>
+                    <span class="stat-value" id="thirst-text">100%</span>
+                </div>
+                <div class="stat">
+                    <label>Happiness:</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="happiness-bar"></div>
+                    </div>
+                    <span class="stat-value" id="happiness-text">100%</span>
+                </div>
+                <div class="stat">
+                    <label>Energy:</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="energy-bar"></div>
+                    </div>
+                    <span class="stat-value" id="energy-text">100%</span>
+                </div>
+                <div class="stat">
+                    <label>Cleanliness:</label>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="cleanliness-bar"></div>
+                    </div>
+                    <span class="stat-value" id="cleanliness-text">100%</span>
+                </div>
+<div class="stat">
+    <label>Loneliness:</label>
+    <div class="stat-bar">
+        <div class="stat-fill" id="loneliness-bar"></div>
+    </div>
+    <span class="stat-value" id="loneliness-text">0%</span>
+</div>
+            </div>
+
+            <div class="growth-panel">
+                <div class="growth-info">
+                    <span>Stage: <span id="stage">Baby</span></span>
+                    <span>Progress: <span id="growth">0</span>/30 hours</span>
+                </div>
+                <div class="growth-bar">
+                    <div class="growth-fill" id="growth-bar"></div>
+                </div>
+            </div>
+
+            <div class="skills-panel">
+                <h3>Learned Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill" id="skill-speak">
+                        <img src="images/skills/speak.png" alt="Speak">
+                        <span>Speak</span>
+                    </div>
+                    <div class="skill" id="skill-roll">
+                        <img src="images/skills/roll.png" alt="Roll Over">
+                        <span>Roll Over</span>
+                    </div>
+                    <div class="skill" id="skill-sit">
+                        <img src="images/skills/sit.png" alt="Sit">
+                        <span>Sit</span>
+                    </div>
+                    <div class="skill" id="skill-stay">
+                        <img src="images/skills/stay.png" alt="Stay">
+                        <span>Stay</span>
+                    </div>
+                    <div class="skill" id="skill-dance">
+                        <img src="images/skills/dance.png" alt="Dance">
+                        <span>Dance</span>
+                    </div>
+                    <div class="skill" id="skill-fetch">
+                        <img src="images/skills/fetch.png" alt="Fetch">
+                        <span>Fetch</span>
+                    </div>
+                    <div class="skill" id="skill-spin">
+                        <img src="images/skills/spin.png" alt="Spin">
+                        <span>Spin</span>
+                    </div>
+                    <div class="skill" id="skill-play_dead">
+                        <img src="images/skills/play_dead.png" alt="Play Dead">
+                        <span>Play Dead</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions-row">
+                <div class="action-group">
+                    <h3>Food</h3>
+                    <button class="action-btn food" data-action="feed" data-type="kibble">
+                        <img src="images/items/kibble.png" alt="Kibble">
+                        Kibble
+                    </button>
+                    <button class="action-btn food" data-action="feed" data-type="treat">
+                        <img src="images/items/treat.png" alt="Treat">
+                        Treat
+                    </button>
+                    <button class="action-btn food" data-action="feed" data-type="veggie">
+                        <img src="images/items/veggie.png" alt="Veggie">
+                        Veggie
+                    </button>
+                </div>
+
+                <div class="action-group">
+                    <h3>Drinks</h3>
+                    <button class="action-btn drink" data-action="drink" data-type="water">
+                        <img src="images/items/water.png" alt="Water">
+                        Water
+                    </button>
+                    <button class="action-btn drink" data-action="drink" data-type="milk">
+                        <img src="images/items/milk.png" alt="Milk">
+                        Milk
+                    </button>
+                    <button class="action-btn drink" data-action="drink" data-type="juice">
+                        <img src="images/items/juice.png" alt="Juice">
+                        Juice
+                    </button>
+                </div>
+
+                <div class="action-group">
+                    <h3>Play</h3>
+                    <button class="action-btn play" data-action="playActivity" data-type="fetch">
+                        <img src="images/actions/fetch.png" alt="Fetch">
+                        Fetch
+                    </button>
+                    <button class="action-btn play" data-action="playActivity" data-type="walk">
+                        <img src="images/actions/walk.png" alt="Walk">
+                        Walk
+                    </button>
+                    <button class="action-btn play" data-action="playActivity" data-type="toy">
+                        <img src="images/actions/toy.png" alt="Toy">
+                        Toy
+                    </button>
+                </div>
+
+                <div class="action-group">
+                    <h3>Affection</h3>
+                    <button class="action-btn affection" data-action="giveAffection" data-type="cuddle">
+                        <img src="images/actions/cuddle.png" alt="Cuddle">
+                        Cuddle
+                    </button>
+                    <button class="action-btn affection" data-action="giveAffection" data-type="hug">
+                        <img src="images/actions/hug.png" alt="Hug">
+                        Hug
+                    </button>
+                    <button class="action-btn affection" data-action="giveAffection" data-type="talk">
+                        <img src="images/actions/talk.png" alt="Talk">
+                        Talk
+                    </button>
+                </div>
+
+                <div class="action-group">
+                    <h3>Care</h3>
+                    <button class="action-btn care" data-action="clean">
+                        <img src="images/actions/clean.png" alt="Clean">
+                        Clean
+                    </button>
+                    <button class="action-btn care" data-action="train">
+                        <img src="images/actions/train.png" alt="Train">
+                        Train
+                    </button>
+                    <button class="action-btn care" data-action="sleep" id="sleep-button">
+                        <img src="images/actions/sleep.png" alt="Sleep">
+                        Sleep
+                    </button>
+                </div>
+            </div>
+
+            <div class="time-info">
+                <p>Play Time: <span id="play-time">0h 0m 0s</span> | Pet Age: <span id="pet-age">0</span> hours</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
